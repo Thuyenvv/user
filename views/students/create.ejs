@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Create </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <div class="container">
+    <h3><a href="/students"> List </a></h3>
+    <h1>Create New </h1>
+    <form action="/students/save" method="post">
+      <table>
+        <tbody>
+          <tr>
+            <td>Name</td>
+            <td><input type="text" name="name" required/></td>
+          </tr>
+          <tr>
+            <td>Age</td>
+            <td><input type="number" name="age" required></input></td>
+          </tr>
+          <tr>
+            <td>gender</td>
+            <td style="display: flex;align-items: center;">
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Other</label>
+            </td>
+          </tr>
+          <tr>
+            <td>class name</td>
+            <td><input type="text" name="className" required/></td>
+          </tr>
+          <tr>
+            <td>address</td>
+            <td><textarea type="text" name="address"></textarea></td>
+          </tr>
+          <tr>
+            <td>email</td>
+            <td><input type="email" name="email" /></td>
+          </tr>
+          <tr>
+            <td colspan="2"><button type="submit">Save</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Edit Student</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <div class="container">
+    <h3><a href="/students">Student List</a></h3>
+    <h1>Edit Student</h1>
+    <form action="/students/update/<%= student._id%>" method="post">
+      <table>
+        <tbody>
+          <tr>
+            <td>Name</td>
+            <td><input type="text" name="name" value="<%= student.name %>" /></td>
+          </tr>
+          <tr>
+            <td>Age</td>
+            <td><input type="number" name="age" value="<%= student.age %>" required></input></td>
+          </tr>
+          <tr>
+            <td>gender</td>
+            <td style="display: flex;align-items: center;">
+              <input type="radio" id="male" name="gender" value="male" <%= student.gender === "male" ? "checked" : null %>>
+              <label for="male">Male</label>
+              <input type="radio" id="female" name="gender" value="female" <%= student.gender === "female" ? "checked" : null %>>
+              <label for="female">Female</label>
+              <input type="radio" id="other" name="gender" value="other" <%= student.gender === "other" ? "checked" : null %>>
+              <label for="other">Other</label>
+            </td>
+          </tr>
+          <tr>
+            <td>class name</td>
+            <td><input type="text" name="className" value="<%= student.className %>" required /></td>
+          </tr>
+          <tr>
+            <td>address</td>
+            <td><textarea type="text" name="address"><%= student.address %></textarea></td>
+          </tr>
+          <tr>
+            <td>email</td>
+            <td><input type="email" name="email" value="<%= student.email %>" /></td>
+          </tr>
+          <tr>
+            <td colspan="2"><button type="submit">Update</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+</body>
+
+</html>
